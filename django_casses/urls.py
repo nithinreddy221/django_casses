@@ -15,9 +15,26 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.http import HttpResponse
+
+
+def landingpage(request):
+    return HttpResponse('''<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 style="color:Red; text-align: center">Welcome to Django</h1>
+</body>
+</html>''')
+
 
 urlpatterns = [
-    path('', include('firstapp.urls')),
+    path('', landingpage),
+    path('fa/', include('firstapp.urls')),
+    path('sa/', include('firstapp.urls')),
     path('admin/', admin.site.urls),
 
 ]
