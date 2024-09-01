@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<head>
+<style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #ff3377;}
+
+#customers tr:hover {background-color: #88ff4d;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #ffff00;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+<h1 style="color:red; text-align: center">Departments</h1>
+
+<table id="customers">
+  <tr>
+    <th>id</th>
+    <th>Dept Name</th>
+    <th>Head Name</th>
+  </tr>
+    {% for data in dept %}
+  <tr>
+    <td>{{data.id}}</td>
+    <td>{{data.department_name}}</td>
+    <td>{{data.dept_head}}</td>
+  </tr>
+    {%endfor%}
+
+</table>
+</body>
+</html>
