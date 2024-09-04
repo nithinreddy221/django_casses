@@ -16,7 +16,7 @@ class Teacher(BaseSchoolModel):
     subject = models.CharField(max_length=20)
 
     def __str__(self):
-        return self.name
+        return f'{self.name}-{self.subject}'
 
 
 class Student(BaseSchoolModel):
@@ -26,3 +26,4 @@ class Student(BaseSchoolModel):
 
     def __str__(self):
         return self.name
+
