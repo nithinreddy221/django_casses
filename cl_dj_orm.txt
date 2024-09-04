@@ -1,0 +1,66 @@
+all
+filter - singel field, multiple field (AND)
+get - error handeling
+OR condition - Q(field=con) | Q(field=con) - s4 = Student.objects.filter(Q(cls=7)|Q(teacher_id=4))
+list  = s4 = Student.objects.filter(cls__in=[1, 2, 3, 4, 5, 55])
+
+related tables data pulling
+s4 = Student.objects.filter(cls=7, teacher_id__name='hello')
+s4 = Student.objects.filter(cls=7, teacher_id__name__in=['hello', 'test'])
+s4 = Student.objects.filter(cls=7, teacher_id__name__in=['hello', 'test']).values('name', 'cls')
+
+
+
+from datetime import datetime
+new_teacher = Teacher(
+    name='John Doe',
+    subject='Mathematics',
+    start_date=datetime(2023, 9, 1),
+    end_date=datetime(2024, 9, 1),
+    address='123 Main Street'
+)
+new_teacher.save()
+
+
+
+teacher = Teacher.objects.get(pk=1)
+teacher.name = 'Jane Doe'
+teacher.subject = 'Physics'
+teacher.address = '456 Elm Street'
+teacher.save()
+
+
+
+
+teacher = Teacher.objects.get(pk=1)
+teacher.delete()
+
+
+
+
+CURD
+
+Creat
+Update
+Read
+Delete
+
+Get
+Post
+Delet
+Put
+Patch
+
+
+
+
+
+
+
+
+
+
+
+
+
+
