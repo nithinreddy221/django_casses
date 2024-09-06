@@ -35,6 +35,7 @@ urlpatterns = [
     path('', landingpage),
     path('fa/', include('firstapp.urls')),
     path('sa/', include('secondapp.urls')),
+    path('da/', include('djrf.urls')),
     path('admin/', admin.site.urls),
 
 ]
